@@ -11,6 +11,21 @@ var on_ground = false
 var dir = 0
 var is_dead = false
 	
+var score = 0
+
+# Save/Load variables
+var path = "user://save.json"
+
+var default_data = {
+	"score" : 0,
+	"level" : "res://src/Level/Level01.tscn"
+}
+
+var data = {}
+
+func _process(delta):
+	$Label.text = "Score: " + str(score)
+	$Label.set_global_position($ScorePosition.global_position)
 
 func _physics_process(delta):
 	
@@ -59,3 +74,42 @@ func dead():
 	vel = Vector2(0, 0)
 	$CollisionShape2D.disabled = true
 	get_tree().change_scene("res://src/Level/Level01.tscn")
+
+
+# Save/Load functions
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#save_game()
+	#load_game()
+	pass
+	
+
+func load_game():
+	var file = File.new()
+	
+	if not file.file_exists(path):
+		return
+	
+	file.open(path, file.READ)
+	
+	var text = file.get_as_text()
+	data = parse_json(text)
+	
+	score = data["score"]
+	
+	file.close()
+	
+
+func save_game():
+	data["score"] = score
+	
+	var file
+	
+	file = File.new()
+	
+	file.open(path, File.WRITE)
+	
+	file.store_line(to_json(data))
+	
+	file.close()

@@ -7,6 +7,9 @@
 [ext_resource path="res://src/Level/LevelChange.tscn" type="PackedScene" id=5]
 
 [node name="Level01" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 4000.0
