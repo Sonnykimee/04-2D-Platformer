@@ -76,6 +76,10 @@ func dead():
 	get_tree().change_scene("res://src/Level/Level01.tscn")
 
 
+func jelly():
+	score += 10
+
+
 # Save/Load functions
 
 # Called when the node enters the scene tree for the first time.

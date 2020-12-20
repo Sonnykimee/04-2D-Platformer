@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/TileSet/Ground.tres" type="TileSet" id=2]
 [ext_resource path="res://src/Enemy/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/TileSet/Flower.tres" type="TileSet" id=4]
 [ext_resource path="res://src/Level/LevelChange.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Jelly.tscn" type="PackedScene" id=6]
 
 [node name="Level01" type="Node2D"]
 __meta__ = {
@@ -55,3 +56,18 @@ tile_data = PoolIntArray( 327735, 0, 0, 327736, 0, 0, 524306, 0, 0, 524341, 1, 0
 [node name="LevelChange" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1696, 256 )
 target = "res://src/Level/Level02.tscn"
+
+[node name="Jelly" parent="." instance=ExtResource( 6 )]
+position = Vector2( 336, 480 )
+
+[node name="Jelly2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 752, 416 )
+
+[node name="Jelly3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 304, 304 )
+
+[node name="Jelly4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 976, 416 )
+
+[node name="Jelly6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1712, 512 )
